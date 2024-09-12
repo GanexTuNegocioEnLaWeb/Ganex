@@ -1,0 +1,8 @@
+---
+const { href = '#', btn = 'btn-cta', ...props } = Astro.props
+// btn = 'btn-cta' | 'btn-cta-black' | 'btn-cta-link' | 'btn-cta-link-black'
+---
+
+<a href={href} class={btn} {...props}>
+    <slot />
+</a>

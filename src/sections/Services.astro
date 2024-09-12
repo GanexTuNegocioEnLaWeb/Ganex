@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+// imagenes
+import desarrolloWeb from "@/assets/services/desarrollo-web.jpg";
+import disenoUi from "@/assets/services/diseno-ui.jpg";
+import disenoUx from "@/assets/services/diseno-ux.jpg";
+import fotografia from "@/assets/services/fotografia.jpg";
+// components
+// import BtnCta from "@/components/BtnCta.astro";
+
+const services = [
+    {
+        title: 'Desarrollo Web',
+        description: 'Creamos tu sitio web completo según tus necesidades',
+        image: desarrolloWeb,
+        // href: "#"
+    },
+    {
+        title: 'Diseño UI/UX',
+        description: 'Diseño de interfaces de usuario, haciendo que se vea genial para tu marca',
+        image: disenoUi,
+        // href: "#"
+    },
+    {
+        title: 'Mantenimiento',
+        description: 'Lo mantenemos funcionando sin que te compliques',
+        image: disenoUx,
+        // href: "#"
+    },
+    {
+        title: 'Fotografía',
+        description: 'Diseño y edición de fotografías para tu negocio',
+        image: fotografia,
+        // href: "#"
+    }
+]
+---
+
+<section id="services" class="section-custom grid grid-cols-1 md:grid-cols-2 gap-5">
+    <article class="max-w-md">
+        <div class="sticky top-10 space-y-4">
+            <h2 class="text-title-6">Nuestra Oferta <span class="text-orange-500">Creativa</span></h2>
+            <p class="-text-body-0">En <span class="text-orange-500">Ganex</span> estamos aquí para liberar su <span class="text-orange-500">potencial creativo</span>. Con servicios <span class="text-orange-500">innovadores</span> y un enfoque personalizado, estamos listos para ayudar a que <span class="text-orange-500">su marca y su negocio brillen</span> y obtengan un reconocimiento generalizado.</p>
+        </div>
+    </article>
+    <article class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {services.map(service => (
+            <section class="relative rounded-md overflow-hidden group">
+            <Image
+                class="w-full h-full object-cover shadow-inner"
+                src={service.image}
+                alt="Desarrollo Web"
+                format="webp"
+                width={1020}
+                height={510}
+                quality={100}
+                loading={"eager"}
+            />
+            <div class="absolute px-4 py-2 w-full h-14 group-hover:h-32 bottom-0 text-body-2 transition-all bg-neutral-50/80 group-hover:bg-neutral-800/80 leading-none text-neutral-800 group-hover:text-neutral-50 ease-out duration-500">
+                <h3 class="text-body-2 pb-4 font-medium text-nowrap text-ellipsis overflow-hidden">{service.title}</h3>
+                <p class="-text-body-1">{service.description}</p>
+                {/* <BtnCta href={service.href} btn="btn-cta-link-black">Saber más</BtnCta> */}
+            </div>
+        </section>
+        ))}
+    </article>
+</section>

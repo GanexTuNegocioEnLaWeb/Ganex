@@ -1,0 +1,72 @@
+---
+---
+
+<section class="section-custom">
+  <ul class="[&>li]:max-w-60 text-center flex flex-wrap gap-5 justify-evenly items-center py-10 bg-neutral-800 text-neutral-50 rounded-md">
+    <li>
+      <h3 class="text-title-5 text-center" data-target="5500000" data-type="number">0</h3>
+      <p class="-text-body-0 mt-1">Usuarios activos en Internet. <span class="text-orange-500">Amplía tu alcance global.</span></p>
+    </li>
+    <li>
+      <h3 class="text-title-5 text-center" data-target="79" data-type="percentage">0%</h3>
+      <p class="-text-body-0 mt-1">De personas investigan en línea antes de comprar. <span class="text-orange-500">Aumenta tu visibilidad.</span></p>
+    </li>
+    <li>
+      <h3 class="text-title-5 text-center" data-target="64" data-type="percentage">0%</h3>
+      <p class="-text-body-0 mt-1">De las pequeñas empresas ya tienen un sitio web. <span class="text-orange-500">No te quedes atrás.</span></p>
+    </li>
+  </ul>
+</section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('h3[data-target]');
+    
+    const animateCounters = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const target = +counter.getAttribute('data-target');
+          const type = counter.getAttribute('data-type'); // Número o porcentaje
+          const speed = 200; // Velocidad de la animación
+          
+          const updateCount = () => {
+            const current = +counter.innerText.replace(/[^0-9]/g, ''); // Eliminar posibles caracteres extra
+            const increment = target / speed;
+            
+            if (current < target) {
+              const newValue = Math.ceil(current + increment);
+              
+              // Formato de millones con puntos y porcentajes
+              if (type === 'number') {
+                counter.innerText = newValue.toLocaleString('es-ES'); // Formato 5.500.000
+              } else if (type === 'percentage') {
+                counter.innerText = newValue + '%'; // Formato 79%
+              }
+              
+              setTimeout(updateCount, 30); // Ajusta el tiempo entre cada incremento
+            } else {
+              // Asegurar que el número final se formatee correctamente
+              if (type === 'number') {
+                counter.innerText = target.toLocaleString('es-ES'); // Mostrar 5.500.000
+              } else if (type === 'percentage') {
+                counter.innerText = target + '%'; // Mostrar 79%
+              }
+            }
+          };
+          
+          updateCount();
+          observer.unobserve(counter); // Dejar de observar el elemento una vez animado
+        }
+      });
+    };
+    
+    const observer = new IntersectionObserver(animateCounters, {
+      threshold: 0.5 // Inicia la animación cuando el 50% del elemento es visible
+    });
+    
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  });
+</script>

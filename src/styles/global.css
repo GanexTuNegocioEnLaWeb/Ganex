@@ -1,0 +1,14 @@
+@tailwind base;
+
+html {
+	@apply font-urbanist;
+	scroll-behavior: smooth;
+}
+
+body {
+	@apply text-neutral-800 bg-neutral-50;
+}
+
+.container-custom {
+	@apply w-[90dvw] max-w-7xl mx-auto;
+}

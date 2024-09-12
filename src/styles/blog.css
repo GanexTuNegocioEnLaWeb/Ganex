@@ -1,0 +1,98 @@
+@tailwind base;
+
+/*
+  The CSS in this style tag is based off .content-post of 's default CSS.
+  https://github.com/.content-post HermanMartinus/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/.content-post styles/default.css
+  License MIT: https://github.com/.content-post HermanMartinus/blob/master/LICENSE.md
+ */
+
+.content-post h1,
+.content-post h2,
+.content-post h3,
+.content-post h4,
+.content-post h5,
+.content-post h6 {
+    @apply mb-2 text-neutral-800 font-bold leading-normal;
+}
+.content-post h1 {
+    @apply text-4xl;
+}
+.content-post h2 {
+    @apply text-3xl;
+}
+.content-post h3 {
+    @apply text-2xl;
+}
+.content-post h4 {
+    @apply text-xl;
+}
+.content-post h5 {
+    @apply text-lg;
+}
+.content-post strong,
+.content-post b {
+    @apply font-bold;
+}
+.content-post a {
+    @apply underline text-blue-500 hover:text-blue-800;
+}
+.content-post p {
+    @apply mb-4 text-base;
+}
+.prose .content-post p {
+    @apply mb-8;
+}
+.content-post textarea {
+    @apply w-full text-base;
+}
+.content-post input {
+    @apply text-base;
+}
+.content-post table {
+	@apply w-full text-left;
+}
+.content-post img {
+    @apply max-w-full w-full object-cover h-auto rounded-md;
+}
+.content-post code {
+    @apply py-1 px-1 text-sm bg-neutral-300 font-medium rounded;
+}
+.content-post pre {
+    @apply my-4 p-4 rounded-md;
+}
+.content-post pre > code {
+	all: unset;
+}
+.content-post blockquote {
+    @apply p-4 my-4 border-l-4 border-neutral-500 bg-neutral-100 text-sm;
+}
+.content-post hr {
+	@apply border-none border-t-2 border-neutral-100
+}
+.content-post ol {
+	@apply list-decimal pl-8;
+}
+.content-post ul {
+	@apply list-disc pl-8;
+}
+.content-post span {
+	@apply text-orange-500;
+}
+
+.content-post .sr-only {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+	clip: rect(1px 1px 1px 1px);
+	/* maybe deprecated but we need to support legacy browsers */
+	clip: rect(1px, 1px, 1px, 1px);
+	/* modern browsers, clip-path works inwards from each corner */
+	clip-path: inset(50%);
+	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
+	white-space: nowrap;
+}

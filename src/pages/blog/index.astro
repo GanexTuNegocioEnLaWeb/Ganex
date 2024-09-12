@@ -1,0 +1,55 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from 'astro:content';
+// components
+import BaseHead from '../../components/UI/header/BaseHead.astro';
+import Header from '../../components/UI/header/Header.astro';
+import Footer from '../../components/Footer.astro';
+import HeroBlog from '@/sections/HeroBlog.astro';
+import Background from '@/components/UI/Background.astro';
+import { fade } from 'astro:transitions';
+
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="container-custom">
+		<Background />
+		<Header />
+		<main>
+			<HeroBlog />
+			<section>
+				<ul class="gap-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+					{
+						posts.map((post) => (
+
+							<li class="hover:bg-neutral-100 rounded-md">
+								<a href={`/blog/${post.slug}/`} class="group">
+									<img width={720} height={360} class="rounded-md shadow-md group-hover:scale-105 group-hover:rotate-1 transition-all" src={post.data.heroImage} alt="" />
+									<h4 class="text-title-0 text-center text-nowrap text-ellipsis overflow-hidden pt-3 px-4 group-hover:underline">{post.data.title}</h4>
+									<p class="-text-body-0 text-center px-5">{post.data.description}</p>
+									<ul class="flex gap-2 justify-center items-center pb-2">
+										{
+											post.data.tags?.slice(0, 2).map((tag) => (
+												<li class="text-orange-500 px-1">{tag}</li>
+											))
+										}
+									</ul>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

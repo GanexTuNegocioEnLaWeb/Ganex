@@ -1,0 +1,32 @@
+---
+import BaseHead from '../components/UI/header/BaseHead.astro';
+import Header from '../components/UI/header/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+// sections
+import HeroIndex from '../sections/HeroIndex.astro';
+import Data from '@/sections/Data.astro';
+import Services from '@/sections/Services.astro';
+import LastProject from '@/sections/LastProject.astro';
+import BlogRecents from '@/sections/BlogRecents.astro';
+import Background from '@/components/UI/Background.astro';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="container-custom">
+		<Background />
+		<Header />
+		<main>
+			<HeroIndex />
+			<Data />
+			<Services />
+			<LastProject />
+			<BlogRecents />
+		</main>
+		<Footer />
+	</body>
+</html>

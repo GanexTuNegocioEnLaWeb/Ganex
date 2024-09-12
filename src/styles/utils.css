@@ -1,0 +1,76 @@
+@tailwind base;
+
+/* TEXTS */
+.text-title-8 {
+    @apply text-8xl font-bold;
+}
+.text-title-7 {
+	@apply text-7xl font-bold;
+}
+.text-title-6 {
+	@apply text-6xl font-bold;
+}
+.text-title-5 {
+	@apply text-5xl font-bold;
+}
+.text-title-4 {
+	@apply text-4xl font-bold;
+}
+.text-title-3 {
+	@apply text-3xl font-bold;
+}
+.text-title-2 {
+	@apply text-2xl font-bold;
+}
+.text-title-1 {
+	@apply text-xl font-bold;
+}
+.text-title-0 {
+	@apply text-lg font-bold;
+}
+.text-title-base {
+	@apply text-base font-bold;
+}
+
+.text-body-2 {
+	@apply text-2xl;
+}
+.text-body-1 {
+	@apply text-xl;
+}
+.text-body-0 {
+	@apply text-lg;
+}
+.text-body-base {
+	@apply text-base;
+}
+.-text-body-0 {
+	@apply text-sm;
+}
+.-text-body-1 {
+	@apply text-xs;
+}
+
+
+/* BUTTONS */
+
+.btn-cta {
+	@apply leading-none px-8 py-4 rounded-md bg-orange-500 text-neutral-50 font-semibold inline-block hover:scale-110 transition-all;
+}
+.btn-cta-black {
+	@apply leading-none px-8 py-4 rounded-md bg-neutral-800 text-neutral-50 font-semibold inline-block hover:scale-110 transition-all;
+}
+.btn-cta-link {
+	@apply leading-none text-sm text-neutral-800 hover:text-neutral-500 underline font-semibold inline-block;
+}
+.btn-cta-link-black {
+	@apply leading-none text-sm text-neutral-50 hover:text-neutral-300 underline font-semibold inline-block;
+}
+
+
+/* SECTIONS */
+
+.section-custom {
+	@apply py-10;
+	/* @apply bg-neutral-50 py-10; */
+}
