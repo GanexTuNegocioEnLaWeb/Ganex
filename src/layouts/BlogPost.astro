@@ -6,6 +6,7 @@ import Header from '../components/UI/header/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Background from '@/components/UI/Background.astro';
+import BtnCta from '@/components/BtnCta.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -20,7 +21,7 @@ const { title, description, pubDate, updatedDate, heroImage, author } = Astro.pr
 	<body class="container-custom">
 		<Background />
 		<Header />
-		<main>
+		<main class="container-blog-custom">
 			<section class="pt-10">
 				<h1 class="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl">{title}</h1>
 				<article class="flex gap-8 flex-wrap my-5">
@@ -32,24 +33,23 @@ const { title, description, pubDate, updatedDate, heroImage, author } = Astro.pr
 			</section>
 
 			<section class="py-5 flex justify-between flex-wrap gap-5">
-				<article class="max-w-5xl content-post w-full">
+				<article class="max-w-4xl content-post w-full">
 					<slot />
 				</article>
 				<article>
-					<div class="sticky top-5">
-						<h4 class="text-title-2">Categorias del blog</h4>
-						<ul class="-text-body-0 text-orange-500 py-4 space-y-2">
-							{
-								[...new Set(Astro.props.tags)].map((tag) => (
-									<li>
-										<a href={`/tags/${tag}`}>{tag}</a>
-									</li>
-								))
-							}
+					<h4 class="text-title-2">Categorias del blog</h4>
+					<ul class="-text-body-0 text-orange-500 py-4 flex gap-4 flex-wrap">
+						{
+							[...new Set(Astro.props.tags)].map((tag) => (
+								<li>
+									<a href={`/tags/${tag}`}>{tag}</a>
+								</li>
+							))
+						}
 						</ul>
-					</div>
 				</article>
 			</section>
+			<BtnCta href="/blog" btn="btn-cta-black">Ver todos los artículos</BtnCta>
 		</main>
 		<Footer />
 	</body>

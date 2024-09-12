@@ -12,3 +12,7 @@ body {
 .container-custom {
 	@apply w-[90dvw] max-w-7xl mx-auto;
 }
+
+.container-blog-custom {
+	@apply w-[90dvw] max-w-4xl mx-auto px-5;
+}

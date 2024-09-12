@@ -70,13 +70,13 @@
 	@apply border-none border-t-2 border-neutral-100
 }
 .content-post ol {
-	@apply list-decimal pl-8;
+	@apply list-decimal pl-8 mb-4;
 }
 .content-post ul {
-	@apply list-disc pl-8;
+	@apply list-disc pl-8 mb-4;
 }
 .content-post span {
-	@apply text-orange-500;
+	@apply text-red-500 font-bold;
 }
 
 .content-post .sr-only {
