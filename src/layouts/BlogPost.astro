@@ -37,12 +37,12 @@ const { title, description, pubDate, updatedDate, heroImage, author } = Astro.pr
 					<slot />
 				</article>
 				<article>
-					<h4 class="text-title-base">Etiquetas del artículo</h4>
-					<ul class="-text-body-0 text-orange-500 py-2 flex gap-4 flex-wrap">
+					<h4 class="text-title-1">Etiquetas del artículo</h4>
+					<ul class="text-body-base text-orange-500 py-2 flex gap-4 flex-wrap">
 						{
 							[...new Set(Astro.props.tags)].map((tag) => (
 								<li>
-									<a href={`/tags/${tag}`}>{tag}</a>
+									{tag}
 								</li>
 							))
 						}

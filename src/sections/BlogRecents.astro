@@ -11,7 +11,7 @@ const posts = (await getCollection('blog')).sort(
 <section class="section-custom grid grid-cols-1 gap-8 md:grid-cols-5">
     <article class="space-y-4 col-span-2">
         <h2 class="text-title-6">Artículos recientes de nuestro <span class="text-orange-500">blog</span></h2>
-        <p class="-text-body-0 max-w-sm">Explore las últimas tendencias, conocimientos de la industria y consejos de expertos en diseño, desarrollo web y crecimiento orgánico en internet.</p>
+        <p class="text-body-base max-w-sm">Explore las últimas tendencias, conocimientos de la industria y consejos de expertos en diseño, desarrollo web y crecimiento orgánico en internet.</p>
     </article>
 
     <ul class="col-span-3 flex flex-col gap-4">
@@ -23,7 +23,7 @@ const posts = (await getCollection('blog')).sort(
                 </div>
                 <div class="col-span-5 md:col-span-3 h-full flex flex-col justify-center">
                     <h4 class="text-title-3 text-nowrap text-ellipsis overflow-hidden">{post.data.title}</h4>
-                    <p class="-text-body-1 mt-1 mb-2 max-w-md">{post.data.description}</p>
+                    <p class="text-body-base mt-1 mb-2 max-w-md">{post.data.description}</p>
                     <BtnCta href={`/blog/${post.slug}`} btn="btn-cta-link">Ver artículo</BtnCta>
                 </div>
             </li>
