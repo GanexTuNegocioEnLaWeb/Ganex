@@ -37,8 +37,8 @@ const { title, description, pubDate, updatedDate, heroImage, author } = Astro.pr
 					<slot />
 				</article>
 				<article>
-					<h4 class="text-title-2">Categorias del blog</h4>
-					<ul class="-text-body-0 text-orange-500 py-4 flex gap-4 flex-wrap">
+					<h4 class="text-title-base">Etiquetas del artículo</h4>
+					<ul class="-text-body-0 text-orange-500 py-2 flex gap-4 flex-wrap">
 						{
 							[...new Set(Astro.props.tags)].map((tag) => (
 								<li>
@@ -49,7 +49,10 @@ const { title, description, pubDate, updatedDate, heroImage, author } = Astro.pr
 						</ul>
 				</article>
 			</section>
-			<BtnCta href="/blog" btn="btn-cta-black">Ver todos los artículos</BtnCta>
+			<section class="flex justify-between gap-4 flex-wrap">
+				<BtnCta href="https://api.whatsapp.com/send?phone=59177374005&text=Hola%2C%20Ganex%2C%0AQuiero%20un%20sitio%20web%20para%20mejorar%20mi%20presencia%20online.%0A%C2%BFC%C3%B3mo%20puedo%20hacerlo%3F" btn="btn-cta" target="_blank">¡Hablemos y crea tu sitio web!</BtnCta>
+				<BtnCta href="/blog" btn="btn-cta-black">Ver otros artículos</BtnCta>
+			</section>
 		</main>
 		<Footer />
 	</body>

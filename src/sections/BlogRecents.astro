@@ -1,8 +1,6 @@
 ---
 import BtnCta from "@/components/BtnCta.astro";
-import { Image } from "astro:assets";
 import { getCollection } from 'astro:content';
-import { fade } from "astro:transitions";
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
