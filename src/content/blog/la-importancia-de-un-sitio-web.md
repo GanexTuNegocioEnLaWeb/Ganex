@@ -4,7 +4,7 @@ description: 'En un mundo cada vez más digital, no tener un sitio web es como n
 pubDate: 'Sep 12 2024'
 updatedDate: 'Sep 13 2024'
 heroImage: '/blog/porque-website/porque-website.jpg'
-author: 'Andres Eduardo Rosas Alpiri'
+author: 'Ganex'
 tags: ['diseño web', 'conversiones']
 ---
 
