@@ -1,0 +1,31 @@
+---
+import BaseHead from '../components/UI/header/BaseHead.astro';
+import Header from '../components/UI/header/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BtnCta from "../components/BtnCta.astro";
+// sections
+import Background from '@/components/UI/Background.astro';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="container-custom">
+		<Background />
+		<Header />
+		<main>
+            <section class="section-custom space-y-5 relative">
+                <h1 class="font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl">¡Uy! Parece que te perdiste...</h1>
+                <h3 class="text-title-1">Error 404 - Página no encontrada</h3>
+                <p class="text-body-base max-w-lg">La página que buscas no está aquí. Tal vez se ha mudado o nunca existió. Pero no te preocupes, ¡te ayudamos a encontrar el camino!</p>
+                <div class="flex flex-wrap gap-5">
+                    <BtnCta href="/" btn="btn-cta-black">Volver al inicio</BtnCta>
+                </div>
+            </section>
+		</main>
+		<Footer />
+	</body>
+</html>
