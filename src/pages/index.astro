@@ -16,6 +16,15 @@ import Background from '@/components/UI/Background.astro';
 <html lang="es">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<!-- Google analitics -->
+		<!-- Google tag (gtag.js) -->
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-BNS433B5FV"></script>
+		<script is:inline>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'G-BNS433B5FV');
+		</script>
 	</head>
 	<body class="container-custom">
 		<Background />
