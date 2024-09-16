@@ -1,6 +1,6 @@
 ---
 title: '¿Por Qué el Mantenimiento Web es Vital para Tu Sitio? ¡No Dejes que Tu Web se Oxide!'
-description: 'Hoy te explicamos por qué no debes dejar de lado el cuidado de tu página y cómo Ganex puede ser tu mejor aliado en este proceso.'
+description: 'Te contamos por qué cuidar tu página es crucial y cómo Ganex puede ayudarte.'
 pubDate: 'Sep 13 2024'
 updatedDate: 'Sep 13 2024'
 heroImage: '/blog/mantenimiento-web/mantenimiento-web-la-clave-para-que-funcione.jpg'

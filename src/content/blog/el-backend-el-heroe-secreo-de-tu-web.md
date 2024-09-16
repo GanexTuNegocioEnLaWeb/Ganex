@@ -1,6 +1,6 @@
 ---
 title: 'El Backend: El Héroe Secreto que Hace que Tu Sitio Web Brille Sin Que Te Des Cuenta'
-description: 'Descubre cómo este maestro de las sombras mantiene todo en marcha y por qué es la pieza clave para el éxito de tu presencia en línea.'
+description: 'Descubre cómo este héroe invisible asegura tu éxito en línea.'
 pubDate: 'Sep 15 2024'
 updatedDate: 'Sep 15 2024'
 heroImage: '/blog/backend/backend-batman.jpg'

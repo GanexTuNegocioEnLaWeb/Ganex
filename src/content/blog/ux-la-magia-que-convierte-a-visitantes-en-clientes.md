@@ -1,6 +1,6 @@
 ---
 title: 'UX: La Magia que Convierte a Visitantes en Clientes (o en Fantasmas)'
-description: '¿Tu web no engancha? Aprende cómo una buena UX puede hacer la diferencia. ¡Te lo contamos aquí!'
+description: '¿Tu web no engancha? Descubre cómo una buena UX marca la diferencia. ¡Aquí!'
 pubDate: 'Sep 15 2024'
 updatedDate: 'Sep 15 2024'
 heroImage: '/blog/ux/la-magia-ux.jpg'
