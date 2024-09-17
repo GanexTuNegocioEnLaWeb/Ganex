@@ -1,11 +1,11 @@
 ---
 title: 'El Backend: El Héroe Secreto que Hace que Tu Sitio Web Brille Sin Que Te Des Cuenta'
 description: 'Descubre cómo este héroe invisible asegura tu éxito en línea.'
-pubDate: 'Sep 15 2024'
-updatedDate: 'Sep 15 2024'
+pubDate: 'Sep 14 2024'
+updatedDate: 'Sep 14 2024'
 heroImage: '/blog/backend/backend-batman.jpg'
 author: 'Ganex'
-tags: ['backend', 'base de datos', 'eficiencia']
+tags: ['backend', 'base de datos', 'eficiencia', 'escalabilidad']
 ---
 
 # ¿Qué es el Backend y por qué es el Héroe Invisible de tu Sitio Web?

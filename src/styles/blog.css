@@ -76,7 +76,7 @@
 	@apply list-disc pl-8 mb-4;
 }
 .content-post span {
-	@apply text-red-500 font-bold;
+	@apply text-red-500;
 }
 
 .content-post .sr-only {

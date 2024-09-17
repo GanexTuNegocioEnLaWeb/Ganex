@@ -8,32 +8,8 @@ import BtnCta from "../components/BtnCta.astro";
     <h3 class="text-title-1">Clientes <span class="text-orange-500">Buscan</span>, Te <span class="text-orange-500">Encuentran</span>, Te <span class="text-orange-500">Contactan</span>, <span class="text-orange-500">Vendes</span>.</h3>
     <p class="text-body-base max-w-lg">Bienvenido a Ganex, donde <span class="text-orange-500">potenciamos</span> tu imagen digital y convertimos <span class="text-orange-500">visitantes en clientes</span> con un diseño web <span class="text-orange-500">impactante y eficaz.</span></p>
     <div class="flex flex-wrap gap-5">
-        <BtnCta id="report_conversion" href="https://api.whatsapp.com/send?phone=59177374005&text=Hola%2C%20Ganex%2C%0AQuiero%20un%20sitio%20web%20para%20mejorar%20mi%20presencia%20online.%0A%C2%BFC%C3%B3mo%20puedo%20hacerlo%3F" target="_blank">Cotizar Proyecto Gratis</BtnCta>
+        <BtnCta href="https://api.whatsapp.com/send?phone=59177374005&text=Hola%2C%20Ganex%2C%0AQuiero%20un%20sitio%20web%20para%20mejorar%20mi%20presencia%20online.%0A%C2%BFC%C3%B3mo%20puedo%20hacerlo%3F" target="_blank">Cotizar Proyecto Gratis</BtnCta>
         <BtnCta href="#services" btn="btn-cta-black">Ver Servicios</BtnCta>
         <a href="/blog" class="inline-block sm:hidden leading-none px-8 py-4 rounded-md bg-neutral-800 text-neutral-50 font-semibold hover:scale-110 transition-all">Ver Blog</a>
     </div>
 </section>
-
-<script is:inline>
-function gtag_report_conversion(url) {
-    var callback = function () {
-    if (typeof(url) != 'undefined') {
-        window.location = url;
-    }};
-    gtag('event', 'conversion', {
-    'send_to': 'AW-16700677288/dQlnCMP_otIZEKi5wJs-',
-    'value': 1.0,
-    'currency': 'BOB',
-    'event_callback': callback
-    });
-return false;
-}
-
-const report_conversion = document.getElementById('report_conversion');
-if (report_conversion) {
-    report_conversion.addEventListener('click', () => {
-        gtag_report_conversion();
-    });
-}
-
-</script>
