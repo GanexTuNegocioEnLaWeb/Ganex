@@ -26,16 +26,16 @@ const posts = (await getCollection('blog')).sort(
 		<main>
 			<HeroBlog />
 			<section>
-				<ul class="gap-5 grid grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))]">
+				<ul class="gap-5 grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))]">
 					{
 						posts.map((post) => (
 
 							<li class="hover:bg-neutral-100 rounded-md w-full">
-								<a href={`/blog/${post.slug}/`} class="group">
-									<img width={720} height={360} class="rounded-md shadow-md object-cover group-hover:scale-105 max-h-52 h-full w-full group-hover:rotate-1 transition-all" src={post.data.heroImage} alt={post.data.title} />
+								<a href={`/blog/${post.slug}/`} class="group text-center">
+									<img width={720} height={360} class="rounded-md shadow-md object-cover group-hover:scale-105 max-h-40 h-full w-full group-hover:rotate-1 transition-all" src={post.data.heroImage} alt={post.data.title} />
 									<h4 class="text-title-1 text-center text-nowrap text-ellipsis overflow-hidden pt-3 px-4 group-hover:underline mx-auto max-w-80">{post.data.title}</h4>
-									<p class="text-body-base text-center max-w-80 mx-auto">{post.data.description}</p>
-									<ul class="flex gap-2 justify-center items-center pb-2">
+									<p class="-text-body-0 text-center max-w-80 mx-auto">{post.data.description}</p>
+									<ul class="-text-body-0 flex gap-2 justify-center items-center pb-2">
 										{
 											post.data.tags?.slice(0, 2).map((tag: string) => (
 												<li class="capitalize text-orange-500 px-1">{tag}</li>
