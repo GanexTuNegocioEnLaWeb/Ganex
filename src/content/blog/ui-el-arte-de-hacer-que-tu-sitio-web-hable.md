@@ -5,7 +5,7 @@ pubDate: 'Sep 16 2024'
 updatedDate: 'Sep 16 2024'
 heroImage: '/blog/ui/diseno-ui.jpg'
 author: 'Ganex'
-tags: ['Diseño de Interfaz de Usuario (UI)', 'Navegación intuitiva', 'eficiencia']
+tags: ['Diseño de UI', 'Navegación intuitiva', 'eficiencia']
 ---
 
 # UI: Más Que Bonita, ¡Es Eficaz!

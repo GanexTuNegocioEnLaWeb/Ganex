@@ -1,0 +1,59 @@
+---
+// Supports weights 100-900
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/UI/header/BaseHead.astro';
+import Header from '../components/UI/header/Header.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Background from '@/components/UI/Background.astro';
+import BtnCta from '@/components/BtnCta.astro';
+
+type Props = CollectionEntry<'proyectos'>['data'];
+
+const { title, description, pubDate, updatedDate, heroImage, author } = Astro.props;
+---
+
+<html lang="es">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+
+	<body class="container-custom">
+		<Background />
+		<Header />
+		<main class="container-blog-custom">
+			<section class="pt-10">
+				<h1 class="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl">{title}</h1>
+				<article class="flex gap-8 flex-wrap my-5">
+					<p>Publicado el: <span class="font-medium"><FormattedDate date={pubDate} /></span></p>
+					{updatedDate && <p>Acutalizado el: <span class="font-medium"><FormattedDate date={updatedDate} /></span></p>}
+					<p>Autor: <span class="font-medium">{author}</span></p>
+				</article>
+				{heroImage && <img width={1020} height={510} class="rounded-md shadow-md w-full object-cover max-h-[30rem]" src={heroImage} alt="" />}
+			</section>
+
+			<section class="py-5 flex justify-between flex-wrap gap-5">
+				<article class="max-w-4xl content-post w-full">
+					<slot />
+				</article>
+				<article>
+					<h4 class="text-title-1">Etiquetas del artículo</h4>
+					<ul class="text-body-base text-orange-500 py-2 flex gap-4 flex-wrap">
+						{
+							[...new Set(Astro.props.tags)].map((tag) => (
+								<li>
+									{tag}
+								</li>
+							))
+						}
+						</ul>
+				</article>
+			</section>
+			<section class="flex justify-between gap-4 flex-wrap">
+				<BtnCta href="https://api.whatsapp.com/send?phone=59177374005&text=Hola%2C%20Ganex%2C%0AQuiero%20un%20sitio%20web%20para%20mejorar%20mi%20presencia%20online.%0A%C2%BFC%C3%B3mo%20puedo%20hacerlo%3F" btn="btn-cta" target="_blank">¡Hablemos y crea tu sitio web!</BtnCta>
+				<BtnCta href="/proyectos" btn="btn-cta-black">Ver otros proyectos</BtnCta>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

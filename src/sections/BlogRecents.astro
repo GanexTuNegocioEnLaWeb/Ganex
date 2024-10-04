@@ -14,19 +14,18 @@ const posts = (await getCollection('blog')).sort(
         <p class="text-body-base max-w-sm">Explore las últimas tendencias, conocimientos de la industria y consejos de expertos en diseño, desarrollo web y crecimiento orgánico en internet.</p>
     </article>
 
-    <ul class="col-span-3 flex flex-col gap-4">
+    <div class="col-span-3 flex flex-col gap-4">
         {
             posts.slice(0, 2).map((post) => (
-            <li class="grid grid-cols-5 gap-4 h-full max-h-52">
+            <a href={`/blog/${post.slug}/`} class="grid grid-cols-5 gap-4 h-full max-h-52 hover:bg-neutral-800/30 rounded-md p-2 hover:cursor-pointer transition-all">
                 <div class="col-span-5 md:col-span-2 h-full rounded-md overflow-hidden">
-                    <img width={720} height={360} class="w-full object-cover h-full shadow-inner hover:scale-110 hover:rotate-2 transition-all" src={post.data.heroImage} alt={post.data.title} />
+                    <img width={720} height={360} class="w-full object-cover h-full shadow-inner" src={post.data.heroImage} alt={post.data.title} />
                 </div>
                 <div class="col-span-5 md:col-span-3 h-full flex flex-col justify-center">
                     <h4 class="text-title-3 text-nowrap text-ellipsis overflow-hidden">{post.data.title}</h4>
                     <p class="text-body-base mt-1 mb-2 max-w-md">{post.data.description}</p>
-                    <BtnCta href={`/blog/${post.slug}`} btn="btn-cta-link">Ver artículo</BtnCta>
                 </div>
-            </li>
+            </a>
         ))}
-    </ul>
+    </div>
 </section>

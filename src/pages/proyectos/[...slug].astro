@@ -1,0 +1,24 @@
+---
+import '@/styles/blog.css'
+
+import { type CollectionEntry, getCollection } from 'astro:content';
+import ProyectosPost from '../../layouts/ProyectosPost.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('proyectos');
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
+type Props = CollectionEntry<'proyectos'>;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<ProyectosPost {...post.data}>
+	<section class="content-post">
+		<Content />
+	</section>
+</ProyectosPost>
